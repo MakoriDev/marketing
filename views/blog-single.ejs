@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Required meta tags -->
+
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-7EJSKB9ELL"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-7EJSKB9ELL');
+</script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title><%= blog.title %> | Black Coffee Network</title>
+    <link rel="stylesheet" href="/plugins/bulma/bulma.min.css">
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="icon" href="/images/logo.png" type="image/png">
+    <!-- Add other CSS files or links here -->
+</head>
+<body>
+
+<header class="navigation">
+    <!-- Navigation code here -->
+</header>
+
+<section class="page-title bg-1">
+   <div class="container">
+      <div class="columns">
+         <div class="column is-12">
+            <div class="block has-text-centered">
+               <h1 class="is-capitalize text-lg"><%= blog.title %></h1>
+            </div>
+         </div>
+      </div>
+   </div>
+</section>
+
+<section class="section blog-wrap">
+    <div class="container">
+        <!-- Single blog post details -->
+        <div class="blog-item-content">
+            <h2 class="mt-4"><%= blog.title %></h2>
+            <div><%- blog.content %></div> <!-- Display full content -->
+            <!-- You can add more details like author, date, etc., here -->
+        </div>
+        
+    </div>
+    
+</section>
+<a href="/blog/all">Back to Blogs</a>
+<footer class="footer section">
+    <!-- Footer content here -->
+</footer>
+
+
+<!-- Essential Scripts -->
+<script src="/plugins/jquery/jquery.js"></script>
+<script src="/js/script.js"></script>
+<!-- Add other JS files or scripts here -->
+
+</body>
+</html>

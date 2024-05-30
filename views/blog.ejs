@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-7EJSKB9ELL"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-7EJSKB9ELL');
+    </script>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add New Blog</title>
+    <!-- Add link to your CSS files here -->
+    <!-- TinyMCE script -->
+    <script src="https://cdn.tiny.cloud/1/hyuws7mh5v9lzlsvn9u91b7cuc2dbaiotl10ng6erkzprqnq/tinymce/5/tinymce.min.js" referrerpolicy="origin"></script>
+</head>
+<body>
+    <h1>Add New Blog</h1>
+
+    <% if (typeof message !== 'undefined') { %>
+        <p><%= message %></p>
+    <% } %>
+    
+    <form action="/blog/new" method="POST">
+        <div>
+            <label for="title">Title:</label>
+            <input type="text" id="title" name="title" required>
+        </div>
+        <div>
+            <label for="content">Content:</label>
+            <textarea id="content" name="content" rows="4" required></textarea>
+        </div>
+        <button type="submit">Add Blog</button>
+    </form>
+    <a href="/">Back to Home</a>
+
+    <!-- TinyMCE Initialization Script -->
+    <script>
+        tinymce.init({
+            selector: '#content',
+            plugins: 'lists',
+            toolbar: 'undo redo | styleselect | bold italic | numlist bullist | alignleft aligncenter alignright alignjustify | outdent indent',
+            setup: function(editor) {
+                editor.on('change', function() {
+                    editor.save(); // Ensure the content gets updated in the textarea
+                });
+            }
+        });
+    </script>
+</body>
+</html>
